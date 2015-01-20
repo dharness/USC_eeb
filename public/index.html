@@ -1,0 +1,52 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+<head>
+
+    <title> USC Elections </title>
+
+     <!-- load angular and angular route via CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+
+    <!-- Basic Angular App -->
+    <script src="app.js"></script>
+
+    <!-- Controllers -->
+    <script src="controllers/mainController.js"></script> 
+    <script type="text/javascript" src ="lib/bootstrap.min.js"></script>
+
+    <!-- Styles -->
+    <link rel='stylesheet' href='styles/style.css'>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link href="styles/one-page-wonder.css" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Ugly Metadata -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+  </head>
+
+
+
+
+
+
+
+
+
+
+  <body>
+    <!-- this is where content will be injected -->
+    <div class="page {{ pageClass }}" ng-view ></div>
+</body>
+
+
+</html>
