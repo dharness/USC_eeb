@@ -1,5 +1,16 @@
-myapp.controller('blogController', function($scope) {
+myapp.controller('blogController', function($scope, $http) {
 
-	console.log('in blog controller')
+	var bm = new BlogManager($http)
+
+	$scope.submitPost = function() {
+		
+		bm.pushEntry ( {
+			'title': $scope.entry.title,
+			'content': $scope.entry.content
+		})
+
+		$scope.entry.title = ""
+		$scope.entry.content = ""
+	}
 
 });

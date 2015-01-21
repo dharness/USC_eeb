@@ -15,7 +15,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li>
-            <a href="#About">About</a>
+            <a ng-click="scrollTo('About')">About</a>
           </li>
           <li>
             <a href="#Blog">Blog <span class="badge"> 4 </span></a> 
@@ -23,9 +23,9 @@
           <li>
             <a  class = "dropdown-toggle" data-toggle = "dropdown"> Candidates <b class = "caret"></b></a>
             <ul class = "dropdown-menu">
-              <li><a href="#C1">Candidate One</a></li>
-              <li><a href="#C2">Candidate Two</a></li>
-              <li><a href="#C3">Candidate Three</a></li>
+              <li><a ng-click="scrollTo('C1')" >Candidate One</a></li>
+              <li><a ng-click="scrollTo('C2')" >Candidate Two</a></li>
+              <li><a ng-click="scrollTo('C3')" >Candidate Three</a></li>
             </ul>
           </li>
 
@@ -94,13 +94,13 @@
   <hr class="featurette-divider">
 
   <!-- Page Content -->
-  <div class="container">
+  <div class="container" >
 
-    <hr class="featurette-divider">
+    <hr class="featurette-divider" id="C1">
 
     <!-- First Featurette -->
-    <div class="featurette" id="C1">
-      <img class="featurette-image img-circle img-responsive pull-right" src="http://b.fastcompany.net/multisite_files/fastcompany/imagecache/slideshow_large/slideshow/2013/05/3010031-slide-slide-3-how-to-talk-like-a-most-creative-person.jpg">
+    <div class="featurette" >
+      <img class="featurette-image img-circle img-responsive pull-right" src="http://b.fastcompany.net/multisite_files/fastcompany/imagecache/slideshow_large/slideshow/2013/05/3010031-slide-slide-3-how-to-talk-like-a-most-creative-person.jpg" >
       <h2 class="featurette-heading">Ryan Holmes
         <span class="text-muted">The change you deserve.</span>
       </h2>
@@ -113,7 +113,7 @@
 
     <!-- Second Featurette -->
     <div class="featurette" id="C2">
-      <img class="featurette-image img-circle img-responsive pull-left" src="http://stanlemmens.nl/wp/wp-content/uploads/2014/07/bill-gates-wealthiest-person.jpg">
+      <img class="featurette-image img-circle img-responsive pull-left" src="http://stanlemmens.nl/wp/wp-content/uploads/2014/07/bill-gates-wealthiest-person.jpg" width="500">
       <h2 class="featurette-heading">Ben Charlebois
         <span class="text-muted">Is Pretty Cool Too.</span>
       </h2>
