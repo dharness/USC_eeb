@@ -30,5 +30,5 @@ app.use(express.static(__dirname + '/public'))
 require('./app/routes.js')(app) // load our routes and pass in our app and fully configured passport
 
 // launch ======================================================================
-app.listen(port)
-console.log('The magic happens on port ' + port)
+app.listen(port, '127.0.0.1')
+console.log('The magic happens on 127.0.0.1:' + port)
