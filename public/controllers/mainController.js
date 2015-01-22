@@ -13,26 +13,27 @@ myapp.controller('mainController', function($scope, $location, $anchorScroll, $h
 	var bm = new BlogManager($http)
 
 	// Handle all the blog entries inside this callback, res is an array of entries
-	bm.getEntries(function (res) {
+	bm.getEntries(function(res) {
 		var s = "";
-		console.log(res[0].title)
-		console.log(res[0].content)
+
+		changeArticle(res[0])
 		//injection from database
-		$.each(res, function(i,e){
-			s += makeStringPreview(this.title,this.content,i);
+		$.each(res, function(i, e) {
+			s += makeStringPreview(this.title, this.content, i);
 		});
 
-		$.each(res, function(i,e){
-			$("#readMore" + i).on('click', fullArticle(this.title, this.content ,i))
+		$.each(res, function(i, e) {
+			$(document).on('click', '#readMore' + i, function(e) {
+				changeArticle(res[i])
+			});
 		});
-
 
 		$('#articlePreview').html(s);
 		//$('#fullArticle').html(somestring);
 	})
 });
 
-function makeStringPreview(title, content, index){
+function makeStringPreview(title, content, index) {
 	var strVar = "";
 	strVar += "<div class ='col-xs-4'>";
 	strVar += " <img src='images\/profile_dummy.png' class='img-responsive' alt='Responsive image'>";
@@ -46,7 +47,7 @@ function makeStringPreview(title, content, index){
 	return strVar;
 }
 
-function fullArticle(title, content, index){
-
-	alert(title + content + index);
+function changeArticle(entry) {
+	$('#fullTitle').html(entry.title);
+	$('#fullContent').html(entry.content);
 }
