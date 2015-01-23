@@ -13,5 +13,11 @@
 	.when('/blog', {
 		templateUrl: 'pages/blog.html',
 		controller: 'blogController'
+	})
+
+	//signup page
+	.when('/admin', {
+		templateUrl: 'pages/admin.html',
+		controller: 'adminController'
 	});
 });

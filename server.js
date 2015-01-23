@@ -9,6 +9,7 @@ var bodyParser = require('body-parser')
 var methodOverride = require('method-override')
 var http = require('http')
 var MongoClient = require('mongodb').MongoClient;
+_Grid = MongoClient.Grid;
 
 // DATBASE CRUMS ======================================
 
