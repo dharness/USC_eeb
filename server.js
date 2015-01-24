@@ -17,7 +17,7 @@ var User = require('./models/user.js');
 var mongoose = require('mongoose');
 var flash = require('connect-flash')
 mongoose.connect(dbConfig.url);
-var bCrypt = require('bCrypt');
+var bCrypt = require('bcrypt');
 
 // Configuring Passport
 var passport = require('passport');
