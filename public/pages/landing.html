@@ -18,7 +18,7 @@
             <a ng-click="scrollTo('About')">About</a>
           </li>
           <li>
-            <a href="#Blog">Blog <span class="badge"> 4 </span></a> 
+            <a href="#Blog">Blog <span class="badge" id = "blogNum">  </span></a> 
           </li>
           <li>
             <a  class = "dropdown-toggle" data-toggle = "dropdown"> Candidates <b class = "caret"></b></a>
@@ -68,7 +68,7 @@
   <center><div style= "background-color: rgb(220,220,220)" ><h1>Blog<h1> 
 
   <div class ="container" style="width:100%;">
-    <div class="col-xs-4">
+    <div class="col-lg-4">
       <div class="panel panel-default" style="width:100%;">
         <div class="panel-heading">
           <h3 class="panel-title">Article List</h3>
@@ -83,10 +83,10 @@
   </div>
 
 <!-- Full Article -->
-    <div class="col-xs-8">
+    <div class="col-lg-8">
       <div class="panel panel-default" style="width:100%;" id = "fullArticle">
         <div class="panel-heading">
-          <h3 class="panel-title">Published on January 20, 2015 - By : Ryan Holmes</h3>
+          <h3 class="panel-title" id= "blogHeader"> </h3>
         </div>
         <div class="panel-body" style=" max-height: 400px; overflow-y: scroll;">  
           <h2 id='fullTitle' ></h2>

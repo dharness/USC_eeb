@@ -27,7 +27,10 @@ module.exports = function(app) {
 
 		_db.collection('blogs').insert({
 				'title': req.body.title,
-				'content': req.body.content
+				'content': req.body.content,
+				'author' : req.body.author,
+				'date' : Date(),
+				'image': req.body.image
 			},
 			function(err, result) {
 				if (err)
