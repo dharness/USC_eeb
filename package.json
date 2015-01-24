@@ -2,9 +2,12 @@
   "name": "Stain_DB",
   "main": "server.js",
   "dependencies": {
+    "bcrypt": "^0.8.1",
     "body-parser": "~1.4.2",
     "connect-flash": "^0.1.1",
+    "ejs": "^2.2.3",
     "express": "~4.0.0",
+    "express-session": "^1.10.1",
     "method-override": "~2.0.2",
     "mongodb": "*",
     "mongoose": "~3.8.0",

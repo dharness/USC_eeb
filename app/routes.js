@@ -4,30 +4,26 @@ module.exports = function(app) {
 
 	//=============================== MANAGE BLOG POSTS ===========================================
 
+	//give the user the blog posting page		// SECURE ++++++
+	app.get('/admin', isAuthenticated, function(req, res) {
+		res.render('admin.html')
+	});
+
+	//give the user the blog posting page
+	app.get('/login', function(req, res) {
+		res.render('login.html')
+	});
+
 	//get all entries
 	app.get('/entries', function(req, res) {
 
 		_db.collection('blogs').find().toArray(function(err, docs) { //return the blog entries as array
-			console.log(docs)
 			res.send(docs);
 		});
 	});
 
-	//get all entries
-	app.post('/login', function(req, res) {
-
-		if(req.body.username == 'ryan' && req.body.password == 'holmes'){
-			res.send(200)
-		}
-
-		// _db.collection('blogs').find().toArray(function(err, docs) { //return the blog entries as array
-		// 	console.log(docs)
-		// 	res.send(docs);
-		// });
-	});
-
-	//use this to check the current user
-	app.post('/entry', function(req, res) {
+	//use this to check the current user		// SECURE ++++++
+	app.post('/entry', isAuthenticated, function(req, res) {
 
 		_db.collection('blogs').insert({
 				'title': req.body.title,
@@ -37,15 +33,15 @@ module.exports = function(app) {
 				if (err)
 					throw err
 				if (result) {
-					res.send(result)
+					res.redirect('/admin');
 				}
 			})
 	});
 
-	app.post('/image', function() {
+	app.post('/image', isAuthenticated, function() {		// SECURE ++++++
 		var grid = new _Grid(_db, 'fs');
 		var buffer = new Buffer("Hello world");
-		
+
 		grid.put(buffer, {
 			metadata: {
 				category: 'text'

@@ -1,17 +1,3 @@
-myapp.controller('blogController', function($scope, $http) {
-
-	$scope.submitPost = function() {
-
-		bm.pushEntry({
-			'title': $scope.entry.title,
-			'content': $scope.entry.content
-		})
-
-		$scope.entry.title = ""
-		$scope.entry.content = ""
-	}
-
-
 function previewFile() {
 	var preview = document.querySelector('img'); //selects the query named img
 	var file = document.querySelector('input[type=file]').files[0]; //sames as here
@@ -31,5 +17,3 @@ function previewFile() {
 }
 
 previewFile();
-
-});

@@ -5,7 +5,6 @@ myapp.controller('mainController', function($scope, $location, $anchorScroll, $h
 
 	$scope.scrollTo = function(id) {
 		$location.hash(id);
-		console.log($location.hash());
 		$anchorScroll();
 	};
 
